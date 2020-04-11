@@ -20,6 +20,9 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import model.entidades.AluguelCarro;
+import model.entidades.Veiculo;
+import model.services.AluguelServices;
+import model.services.BrasilImpostoServices;
 
 public class Programa {
 
@@ -30,7 +33,7 @@ public class Programa {
 			Locale.setDefault(Locale.US);
 			Scanner sc = new Scanner(System.in);
 			
-			SimpleDateFormat sdf = new SimpleDateFormat();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy HH:mm");
 			
 			System.out.println("Entre com os Dados");
 			
@@ -38,10 +41,12 @@ public class Programa {
 			String modelo = sc.nextLine();
 			
 			System.out.print("Data retirada: ");
-			Date dIniticial = sdf.parse(sc.next());
+			Date dInicial = sdf.parse(sc.nextLine());
 			
 			System.out.print("Data retorno: ");
-			Date dFinal = sdf.parse(sc.next());
+			Date dFinal = sdf.parse(sc.nextLine());
+			
+			AluguelCarro ac = new AluguelCarro(dInicial, dFinal, new Veiculo(modelo));
 			
 			System.out.print("Preço por hora: ");
 			double precoHora = sc.nextDouble();
@@ -49,11 +54,15 @@ public class Programa {
 			System.out.print("Preço por dia: ");
 			double precoDia = sc.nextDouble();
 			
+			AluguelServices as = new AluguelServices(precoHora, precoDia, new BrasilImpostoServices());
 			
+			as.processandoValor(ac);
+			
+			System.out.println(ac);
 			
 		}catch(ParseException erro){
 			
-			System.out.print("Erro de entrada de dados " + erro.getMessage() );
+			System.out.print("Erro de entrada de dados : " + erro.getMessage() );
 		}	
 		
 		

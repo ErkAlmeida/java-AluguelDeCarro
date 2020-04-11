@@ -14,7 +14,7 @@ public class AluguelServices
 		
 	}
 
-	public AluguelServices(Double precoPorHora, Double precoPorDia) {
+	public AluguelServices(Double precoPorHora, Double precoPorDia, BrasilImpostoServices taxaServico) {
 		this.precoPorHora = precoPorHora;
 		this.precoPorDia = precoPorDia;
 	}
@@ -27,7 +27,7 @@ public class AluguelServices
 	   long temp2 = aluguelCarro.getdFinal().getTime();
 	   
 	   //Calcula a diferença em milisegundo e converte para hora 
-	   double horas = (double)(temp2 - temp1)/1000/60/60;
+	   double horas = (double)(temp2 - temp1) / 1000 / 60 / 60;
 	   
 	   Double pagamentoBasico;
 	   
