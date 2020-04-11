@@ -13,10 +13,51 @@ exemplos.*/
 
 package aplicacao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
+
+import model.entidades.AluguelCarro;
+
 public class Programa {
 
 	public static void main(String[] args) 
 	{
+		try {
+	
+			Locale.setDefault(Locale.US);
+			Scanner sc = new Scanner(System.in);
+			
+			SimpleDateFormat sdf = new SimpleDateFormat();
+			
+			System.out.println("Entre com os Dados");
+			
+			System.out.print("Modelo do Carro: ");
+			String modelo = sc.nextLine();
+			
+			System.out.print("Data retirada: ");
+			Date dIniticial = sdf.parse(sc.next());
+			
+			System.out.print("Data retorno: ");
+			Date dFinal = sdf.parse(sc.next());
+			
+			System.out.print("Preço por hora: ");
+			double precoHora = sc.nextDouble();
+			
+			System.out.print("Preço por dia: ");
+			double precoDia = sc.nextDouble();
+			
+			
+			
+		}catch(ParseException erro){
+			
+			System.out.print("Erro de entrada de dados " + erro.getMessage() );
+		}	
+		
+		
+				
 		
 	}
 }
