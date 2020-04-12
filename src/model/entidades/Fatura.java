@@ -2,8 +2,8 @@ package model.entidades;
 
 public class Fatura {
 
-	private Double pagamentoBasico;
-	private Double imposto;
+	private Double pagamentoBasico = 0.0;
+	private Double imposto = 0.0;
 	
 	public Fatura() {
 		
@@ -34,5 +34,4 @@ public class Fatura {
 		
 		return getPagamentoBasico() + getImposto();
 	}
-	
 }

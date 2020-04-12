@@ -51,11 +51,4 @@ public class AluguelCarro {
 	public void setFatura(Fatura fatura) {
 		this.fatura = fatura;
 	}
-	
-	@Override 
-	public String toString() {
-		return "Pagamento Basico" + fatura.getPagamentoBasico() 
-				+"Taxa: "+ fatura.getImposto() 
-				+"Total: "+ fatura.pagamentoTotal() ;
-	}
 }

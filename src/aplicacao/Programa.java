@@ -33,7 +33,7 @@ public class Programa {
 			Locale.setDefault(Locale.US);
 			Scanner sc = new Scanner(System.in);
 			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy HH:mm");
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 			
 			System.out.println("Entre com os Dados");
 			
@@ -58,13 +58,20 @@ public class Programa {
 			
 			as.processandoValor(ac);
 			
-			System.out.println(ac);
+			System.out.println("Fatura#");
+			System.out.println("Pagamento Basico: "+ ac.getFatura().getPagamentoBasico());
+			System.out.println("Tax: "+ac.getFatura().getImposto());
+			System.out.println("Total: "+ ac.getFatura().pagamentoTotal());
+			
+			sc.close();
 			
 		}catch(ParseException erro){
 			
 			System.out.print("Erro de entrada de dados : " + erro.getMessage() );
-		}	
-		
+		}/*catch(NullPointerException erro) {
+			
+			System.out.print("Erro: "+ erro.getMessage());
+		}*/
 		
 				
 		

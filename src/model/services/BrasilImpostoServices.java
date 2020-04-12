@@ -1,16 +1,15 @@
 package model.services;
 
 public class BrasilImpostoServices {
-	
-	
-	public Double taxa(Double montante) 
+
+	public double impostoPais(double pagamentoBasico) 
 	{
-		if(montante < 100.00) 
-		{
-		return	montante * 0.2; 
-			
-		}else {
-			return montante *0.15;
+		if (pagamentoBasico <= 100) {
+
+			return pagamentoBasico * 0.2;
+
+		} else {
+			return pagamentoBasico * 0.15;
 		}
 	}
 
