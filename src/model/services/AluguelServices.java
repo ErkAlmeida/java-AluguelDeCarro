@@ -7,7 +7,7 @@ public class AluguelServices {
 	private Double precoPorHora;
 	private Double precoPorDia;
 
-	private BrasilImpostoServices taxaServico;
+	private TaxaServices taxaServico;
 
 	public AluguelServices() {
 

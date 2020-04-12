@@ -1,6 +1,6 @@
 package model.services;
 
-public class BrasilImpostoServices {
+public class BrasilImpostoServices implements TaxaServices {
 
 	public double impostoPais(double pagamentoBasico) 
 	{
